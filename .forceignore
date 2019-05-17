@@ -10,3 +10,9 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Ignore all profiles
+profiles
+
+# Ignore the AppMenu AppSwitcher element
+AppSwitcher.appMenu
