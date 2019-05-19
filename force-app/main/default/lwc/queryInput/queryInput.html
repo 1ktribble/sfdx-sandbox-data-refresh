@@ -5,13 +5,20 @@
                 Type query below
         </h3>
         <div class="slds-p-around_medium">
-            <lightning-textarea class="slds-m-bottom_small" name="queryInput" label="Enter your query"></lightning-textarea>
+            <lightning-textarea 
+                class="slds-m-bottom_small" 
+                name="queryInput" 
+                label="Enter your query"
+                value={queryString}
+            ></lightning-textarea>
             <lightning-button variant="brand" label="Run SOQL Query" title="Run Query in Text Area" 
-            icon-name="utility:search"></lightning-button>
+            icon-name="utility:search" onclick={handleQuery}></lightning-button>
         </div>
-        
-        <div slot="footer">
-                Placeholder for the results component table - 
-        </div>
+        <template if:true={returnValue}>
+            - Placeholder for the results component table - 
+        </template>
+        <template if:true={error}>
+            <p>{error}</p>
+        </template>
     </lightning-card>
 </template>
