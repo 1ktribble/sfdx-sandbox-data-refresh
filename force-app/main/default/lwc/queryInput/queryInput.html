@@ -7,18 +7,24 @@
         <div class="slds-p-around_medium">
             <lightning-textarea 
                 class="slds-m-bottom_small" 
-                name="queryInput" 
+                name="queryInput"
                 label="Enter your query"
-                value={queryString}
+                onchange={setQueryString}
             ></lightning-textarea>
-            <lightning-button variant="brand" label="Run SOQL Query" title="Run Query in Text Area" 
-            icon-name="utility:search" onclick={handleQuery}></lightning-button>
+            <lightning-button 
+                variant="brand" 
+                label="Run SOQL Query" 
+                title="Run Query in Text Area" 
+                icon-name="utility:search" 
+                onclick={handleQuery}></lightning-button>
         </div>
-        <template if:true={returnValue}>
-            - Placeholder for the results component table - 
-        </template>
-        <template if:true={error}>
-            <p>{error}</p>
-        </template>
+        <div slot='footer'>
+            <template if:true={returnValue}>
+                {returnValue}
+            </template>
+            <template if:true={error}>
+                <p>{error}</p>
+            </template>
+        </div>
     </lightning-card>
 </template>

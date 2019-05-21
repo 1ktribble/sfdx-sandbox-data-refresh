@@ -1,20 +1,22 @@
 import { LightningElement, track } from 'lwc';
-import returnQueryString from '@salesforce/apex/QueryResults.returnQueryString';
+// import returnQueryString from '@salesforce/apex/QueryResults.returnQueryString';
 
 export default class QueryInput extends LightningElement {
-    @track queryString = "";
-    @track returnValue;
-    @track error;
+    @track 
+    queryString;
+
+    @track 
+    returnValue;
+
+    @track 
+    error;
 
     handleQuery() {
-        returnQueryString({query : this.queryString})
-            .then(result => {
-                this.returnValue = result;
-                this.error = undefined;
-            })
-            .catch(error => {
-                this.error = error;
-                this.returnValue = undefined;
-            });
+        // ToDo: Return query results
+        this.returnValue = this.queryString;
+    }
+
+    setQueryString(event) {
+        this.queryString = event.target.value;
     }
 }
