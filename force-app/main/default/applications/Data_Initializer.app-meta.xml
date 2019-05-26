@@ -12,7 +12,8 @@
     <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
     <label>Data Initializer</label>
     <navType>Standard</navType>
-    <tabs>Data_Initializer</tabs>
+    <tabs>standard-home</tabs>
+    <tabs>Data_Migration</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Data_Initializer_UtilityBar</utilityBar>
 </CustomApplication>
