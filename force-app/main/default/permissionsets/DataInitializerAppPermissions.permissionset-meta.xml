@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>Data_Initializer</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <description>Granting access to the Data Initializer App in SF</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Data Initializer App Permissions</label>
+    <license>Salesforce Platform</license>
+</PermissionSet>

@@ -21,6 +21,7 @@
         <div slot='footer'>
             <template if:true={returnValue}>
                 {returnValue}
+                <c-paginated-results></c-paginated-results>
             </template>
             <template if:true={error}>
                 <p>{error}</p>
