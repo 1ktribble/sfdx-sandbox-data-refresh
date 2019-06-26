@@ -1,5 +1,4 @@
 import { LightningElement, track } from 'lwc';
-// import returnQueryString from '@salesforce/apex/QueryResults.returnQueryString';
 
 export default class QueryInput extends LightningElement {
     @track 

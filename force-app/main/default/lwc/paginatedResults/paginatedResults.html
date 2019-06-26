@@ -1,18 +1,10 @@
 <template>
     <div class="queryStringHolder">
-        <template if:true={queryOutput}>
-            {queryOutput}
+        <template if:true={sObjectsReturned}>
+            {sObjectsReturned}
         </template>
-        <template if:false={queryOutput}>
+        <template if:false={sObjectsReturned}>
             No data returned
-        </template>
-    </div>
-    <div class="resultsHolder">
-        <template if:true={dataLoaded}>
-            Put loaded content here
-        </template>
-        <template if:false={dataLoaded}>
-            <lightning-spinner alternative-text="Loading"></lightning-spinner>
         </template>
     </div>
 </template>
