@@ -5,26 +5,30 @@ import returnQueryString from '@salesforce/apex/QueryResults.returnQueryString';
 
 export default class PaginatedResults extends LightningElement {
     @track
-    dataLoaded = true;
+    dataLoaded = false;
 
     @track
-    queryOutput = '';
+    sObjectsReturned = '';
 
     @api
     queryString;
 
     @wire(returnQueryString, { query: '$queryString' })
-    methodReturn({ error, data }) {
+    async returnQueryResults({ error, data }) {
         if (data) {
-            this.queryOutput = data;
-            this.error = undefined;
-            console.log('Data ==> ' + data);
-            
+            this.sObjectsReturned = await JSON.stringify(data);
+            this.dataLoaded = true;
+            this.error = await undefined;            
         } else if (error) {
             console.log('Error ==> ' + error);
             this.data = undefined;
             this.error = error;
         }
     }
+
+    // parseJSON(input){
+    //     // return the first value of the input
+    //     return input[0];
+    // }
         
 }
