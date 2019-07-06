@@ -26,9 +26,7 @@ export default class PaginatedResults extends LightningElement {
         }
     }
 
-    // parseJSON(input){
-    //     // return the first value of the input
-    //     return input[0];
-    // }
-        
+    resultFromJSON = this.sObjectsReturned;
+
+    
 }
